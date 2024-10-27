@@ -1,10 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import { Roboto } from 'next/font/google'
-import { BRAND, DESCRIPTION } from '@/CONSTANTS';
+import localFont from 'next/font/local'
+import { BRAND, DESCRIPTION } from '@/CONSTANTS'
 
 const roboto = Roboto({
   weight: ['100', '400', '700'],
   subsets: ['latin'],
+})
+
+const pokemon = localFont({
+  src: '../fonts/pokemon_solid.ttf',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={`${roboto.className} ${pokemon.className}`}>
         {children}
       </body>
     </html>
