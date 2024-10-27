@@ -1,19 +1,18 @@
-@use '@/sass/_mixins.scss' as mixins;
+@use '@/sass/_mixins.scss' as *;
 
 .logo {
-  @include mixins.spacing('medium', 'vertical');
-  @include mixins.flex();
+  @include flex();
 
   [data-label] {
     &:first-child {
-      @include mixins.fontDisplay('large', $color: $primary-color);
-      @include mixins.zIndex(2);
+      @include fontDisplay('large', $color: $primary-color);
+      @include zIndex(2);
       margin-right: -$spacing-sm;
     }
 
     &:last-child {
-      @include mixins.fontDisplay('large', $color: $secondary-color);
-      @include mixins.zIndex(2);
+      @include fontDisplay('large', $color: $secondary-color);
+      @include zIndex(2);
       margin-left: -$spacing-sm;
     }
   }

@@ -1,0 +1,7 @@
+@use '@/styles/mixins' as *;
+
+.section {
+  @include flex(column, center, center);
+  @include spacing('medium', 'vertical');
+  width: 100%;
+}
