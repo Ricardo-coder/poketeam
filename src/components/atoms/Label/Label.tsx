@@ -20,7 +20,6 @@ export function Label({ children = "", tag = "span" }: LabelProps): JSX.Element 
     tag !== 'span' as LabelProps['tag'] &&
     tag !== 'p' as LabelProps['tag']
   ) {
-    console.log('if')
     return createElement('span', {
       'data-label': true,
       className: styles.label,

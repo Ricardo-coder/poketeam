@@ -1,10 +1,18 @@
-import { createElement } from 'react';
+import { createElement, Fragment } from 'react';
+import styles from './Heading.module.scss';
 
 export interface IHeadingProps {
-  children: string;
+  children: React.ReactNode;
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export function Heading({ children, tag = 'h1' }: IHeadingProps): JSX.Element {
-  return createElement(tag, {}, children);
+  if (!children || (tag !== 'h1' && tag !== 'h2' && tag !== 'h3' && tag !== 'h4' && tag !== 'h5' && tag !== 'h6')) {
+    return <Fragment />;
+  };
+
+  return createElement(tag, {
+    'data-heading': true,
+    className: styles.heading,
+  }, children);
 }
