@@ -9,11 +9,13 @@ Abaixo estão os componentes incluídos na pasta `components`:
 ### Atoms
 
 [Heading](src/components/atoms/Heading/README.md)
+[Icon](src/components/atoms/Icon/README.md)
 [Label](src/components/atoms/Label/README.md)
 
 ### Molecules
 
 [ImageCard](src/components/molecules/ImageCard/README.md)
+[Logo](src/components/molecules/Logo/README.md)
 
 ## Como usar
 

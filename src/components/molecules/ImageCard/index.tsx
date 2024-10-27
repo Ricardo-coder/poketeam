@@ -12,7 +12,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Label } from "@/components/atoms";
-import style from "./ImageCard.module.scss";
+import style from "./styles.module.scss";
 
 interface ImageCardProps {
   src: string;

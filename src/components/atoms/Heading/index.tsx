@@ -7,7 +7,7 @@
  * @returns {JSX.Element} The rendered heading element or a Fragment if no children or invalid tag is provided.
  */
 import { createElement, Fragment } from 'react';
-import styles from './Heading.module.scss';
+import styles from './styles.module.scss';
 
 export interface IHeadingProps {
   children: React.ReactNode;

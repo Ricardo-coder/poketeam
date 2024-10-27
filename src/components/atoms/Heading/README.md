@@ -24,7 +24,7 @@ import { Heading } from './Heading';
 
 ```typescript
 import { createElement, Fragment } from 'react';
-import styles from './Heading.module.scss';
+import styles from './styles.module.scss';
 
 export interface IHeadingProps {
   children: React.ReactNode;
@@ -45,4 +45,4 @@ export function Heading({ children, tag = 'h1' }: IHeadingProps): JSX.Element {
 
 ### Styling
 
-The component uses styles from `Heading.module.scss`. Ensure you have the appropriate styles defined in this file.
+The component uses styles from `styles.module.scss`. Ensure you have the appropriate styles defined in this file.

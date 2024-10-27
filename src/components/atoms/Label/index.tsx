@@ -8,7 +8,7 @@
  * @returns {JSX.Element} The rendered Label component.
  */
 import { createElement } from "react";
-import styles from "./Label.module.scss";
+import styles from "./styles.module.scss";
 
 interface LabelProps {
   children?: React.ReactNode;

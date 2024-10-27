@@ -32,7 +32,7 @@ const Example = () => (
 import Image from "next/image";
 import Link from "next/link";
 import { Label } from "@/components/atoms";
-import style from "./ImageCard.module.scss";
+import style from "./styles.module.scss";
 
 interface ImageCardProps {
   src: string;
@@ -53,10 +53,10 @@ export function ImageCard({ src, alt, title, link }: ImageCardProps) {
 
 ## Styling
 
-The component uses SCSS modules for styling. Ensure you have the corresponding SCSS file (`ImageCard.module.scss`) in the same directory.
+The component uses SCSS modules for styling. Ensure you have the corresponding SCSS file (`styles.module.scss`) in the same directory.
 
 ```scss
-/* ImageCard.module.scss */
+/* styles.module.scss */
 .imageCard {
   display: flex;
   flex-direction: column;

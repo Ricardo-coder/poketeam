@@ -26,7 +26,7 @@ function App() {
 
 ```typescript
 import { createElement } from "react";
-import styles from "./Label.module.scss";
+import styles from "./styles.module.scss";
 
 interface LabelProps {
   children?: React.ReactNode;
@@ -54,5 +54,5 @@ export function Label({ children = "", tag = "span" }: LabelProps): JSX.Element 
 
 ## Notes
 
-- The component uses a CSS module for styling, which is imported as `styles` from `Label.module.scss`.
+- The component uses a CSS module for styling, which is imported as `styles` from `styles.module.scss`.
 - The `data-label` attribute is added to the rendered element for potential use in testing or styling.
