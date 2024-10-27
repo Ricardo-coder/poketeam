@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Icon } from './Icon';
+import { Icon } from './';
 
 jest.mock('react', () => ({
   ...jest.requireActual('react'),

@@ -14,7 +14,7 @@
  * 
  * @returns {JSX.Element} The SVG representation of a Pokeball.
  */
-import { IconProps } from "../../Icon";
+import { IconProps } from "@/components/atoms/Icon";
 
 const Pokeball = ({ sizes: { width, height }, fill }: IconProps) => (
   <svg

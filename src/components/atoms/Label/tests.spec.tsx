@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Label } from './Label';
+import { Label } from './';
 
 describe('Label component', () => {
   it('renders a span by default', () => {

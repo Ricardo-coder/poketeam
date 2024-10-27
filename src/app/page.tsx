@@ -1,11 +1,10 @@
-import { Heading } from "@/components/atoms";
-import { BRAND } from "@/CONSTANTS";
+import { Logo } from "@/components/molecules";
 
 export default function Home() {
   return (
     <div>
       <header>
-        <Heading>{BRAND}</Heading>
+        <Logo />
       </header>
       <main>
       </main>

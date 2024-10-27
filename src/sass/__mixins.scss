@@ -1,0 +1,322 @@
+@use './_variables.scss' as v;
+
+@mixin fontDisplay($size: 'large', $color: v.$text-light) {
+  font-family: v.$font-display;
+  color: $color;
+
+  @if $size =='small' {
+    font-size: v.$font-size-sm;
+  }
+
+  @else if $size =='medium' {
+    font-size: v.$font-size-md;
+  }
+
+  @else if $size =='large' {
+    font-size: v.$font-size-lg;
+  }
+
+  @else if $size =='xlarge' {
+    font-size: v.$font-size-xl;
+  }
+}
+
+@mixin fontDefault($size: 'medium') {
+  font-family: v.$font-default;
+
+  @if $size =='small' {
+    font-size: v.$font-size-sm;
+  }
+
+  @else if $size =='medium' {
+    font-size: v.$font-size-md;
+  }
+
+  @else if $size =='large' {
+    font-size: v.$font-size-lg;
+  }
+
+  @else if $size =='xlarge' {
+    font-size: v.$font-size-xl;
+  }
+}
+
+@mixin spacing($size: 'medium', $direction: 'all') {
+  @if $direction =='all' {
+    @if $size =='small' {
+      padding: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='top' {
+    @if $size =='small' {
+      padding-top: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-top: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-top: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-top: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='right' {
+    @if $size =='small' {
+      padding-right: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-right: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-right: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-right: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='bottom' {
+    @if $size =='small' {
+      padding-bottom: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-bottom: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-bottom: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-bottom: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='left' {
+    @if $size =='small' {
+      padding-left: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-left: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-left: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-left: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='horizontal' {
+    @if $size =='small' {
+      padding-left: v.$spacing-sm;
+      padding-right: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-left: v.$spacing-md;
+      padding-right: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-left: v.$spacing-lg;
+      padding-right: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-left: v.$spacing-xl;
+      padding-right: v.$spacing-xl;
+    }
+  }
+
+  @else if $direction =='vertical' {
+    @if $size =='small' {
+      padding-top: v.$spacing-sm;
+      padding-bottom: v.$spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-top: v.$spacing-md;
+      padding-bottom: v.$spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-top: v.$spacing-lg;
+      padding-bottom: v.$spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-top: v.$spacing-xl;
+      padding-bottom: v.$spacing-xl;
+    }
+  }
+}
+
+@mixin border($size: 'thin', $radius: 'standard', $color: 'dark') {
+  @if $size =='thin' {
+    border-width: v.$border-width-thin;
+  }
+
+  @else if $size =='standard' {
+    border-width: v.$border-width-standard;
+  }
+
+  @else if $size =='thick' {
+    border-width: v.$border-width-thick;
+  }
+
+  @if $radius =='standard' {
+    border-radius: v.$border-radius-standard;
+  }
+
+  @else if $radius =='rounded' {
+    border-radius: v.$border-radius-rounded;
+  }
+
+  @else if $radius =='circle' {
+    border-radius: v.$border-radius-circle;
+  }
+
+  @if $color =='primary' {
+    border-color: v.$primary-color;
+  }
+
+  @else if $color =='secondary' {
+    border-color: v.$secondary-color;
+  }
+
+  @else if $color =='tertiary' {
+    border-color: v.$tertiary-color;
+  }
+
+  @else if $color =='dark' {
+    border-color: v.$text-dark;
+  }
+}
+
+@mixin zIndex($level: 1) {
+  @if $level ==1 {
+    z-index: v.$z-index-1;
+  }
+
+  @else if $level ==2 {
+    z-index: v.$z-index-2;
+  }
+
+  @else if $level ==3 {
+    z-index: v.$z-index-3;
+  }
+
+  @else if $level ==4 {
+    z-index: v.$z-index-4;
+  }
+
+  @else if $level ==5 {
+    z-index: v.$z-index-5;
+  }
+
+  @else if $level ==6 {
+    z-index: v.$z-index-6;
+  }
+
+  @else if $level ==7 {
+    z-index: v.$z-index-7;
+  }
+
+  @else if $level ==8 {
+    z-index: v.$z-index-8;
+  }
+
+  @else if $level ==9 {
+    z-index: v.$z-index-9;
+  }
+
+  @else if $level ==10 {
+    z-index: v.$z-index-10;
+  }
+}
+
+@mixin breakpoint($size: 'small') {
+  @if $size =='small' {
+    @media (min-width: v.$breakpoint-sm) {
+      @content;
+    }
+  }
+
+  @else if $size =='medium' {
+    @media (min-width: v.$breakpoint-md) {
+      @content;
+    }
+  }
+
+  @else if $size =='large' {
+    @media (min-width: v.$breakpoint-lg) {
+      @content;
+    }
+  }
+
+  @else if $size =='xlarge' {
+    @media (min-width: v.$breakpoint-xl) {
+      @content;
+    }
+  }
+
+  @else if $size =='xxlarge' {
+    @media (min-width: v.$breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin background($color: 'dark', $image: 'none', $position: 'center', $size: 'cover') {
+  @if $color =='light' {
+    background-color: v.$background-light;
+  }
+
+  @else if $color =='dark' {
+    background-color: v.$background-dark;
+  }
+
+  @else if $color !='dark' && $color !='light' {
+    background-color: $color;
+  }
+
+  @if $image !='none' {
+    background-image: url($image);
+    background-position: $position;
+    background-size: $size;
+  }
+}

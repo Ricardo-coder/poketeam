@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { ImageCard } from "./ImageCard";
+import { ImageCard } from "./";
 
 describe("ImageCard", () => {
   const props = {
