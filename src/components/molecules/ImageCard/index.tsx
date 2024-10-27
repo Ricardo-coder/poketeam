@@ -23,9 +23,9 @@ interface ImageCardProps {
 
 export function ImageCard({ src, alt, title, link }: ImageCardProps) {
   return (
-    <Link data-image-card href={link} className={style.imageCard}>
+    <Link data-image-card href={link} className={style.imageCard} >
       <Label>{title}</Label>
       <Image src={src} alt={alt} fill />
-    </Link>
+    </Link >
   );
 }

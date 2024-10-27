@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Heading } from './Heading';
+import { Heading } from './';
 
 describe('Heading Component', () => {
   it('renders correctly with default tag', () => {
