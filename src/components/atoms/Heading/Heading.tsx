@@ -1,3 +1,11 @@
+/**
+ * Heading component that renders a heading element with a specified tag.
+ *
+ * @param {IHeadingProps} props - The properties for the Heading component.
+ * @param {React.ReactNode} props.children - The content to be displayed inside the heading.
+ * @param {'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'} [props.tag='h1'] - The HTML tag to be used for the heading.
+ * @returns {JSX.Element} The rendered heading element or a Fragment if no children or invalid tag is provided.
+ */
 import { createElement, Fragment } from 'react';
 import styles from './Heading.module.scss';
 

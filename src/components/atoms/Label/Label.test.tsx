@@ -1,38 +1,37 @@
 import { render } from '@testing-library/react';
 import { Label } from './Label';
 
-describe('Label Component', () => {
-  it('renders with default tag (span)', () => {
-    const { container } = render(<Label>Test Label</Label>);
-    const labelElement = container.querySelector('span');
-    expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toHaveTextContent('Test Label');
+describe('Label component', () => {
+  it('renders a span by default', () => {
+    const { getByText } = render(<Label>Default Span</Label>);
+    const element = getByText('Default Span');
+    expect(element.tagName).toBe('SPAN');
+    expect(element).toHaveAttribute('data-label', 'true');
   });
 
-  it('renders with specified tag (p)', () => {
-    const { container } = render(<Label tag="p">Test Label</Label>);
-    const labelElement = container.querySelector('p');
-    expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toHaveTextContent('Test Label');
-  });
-
-  it('renders with default tag when invalid tag is provided', () => { // @ts-expect-error Testing invalid tag
-    const { container } = render(<Label tag="div" as any>Test Label</Label>);
-    const labelElement = container.querySelector('span');
-    expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toHaveTextContent('Test Label');
+  it('renders a p tag when specified', () => {
+    const { getByText } = render(<Label tag="p">Paragraph Tag</Label>);
+    const element = getByText('Paragraph Tag');
+    expect(element.tagName).toBe('P');
+    expect(element).toHaveAttribute('data-label', 'true');
   });
 
   it('applies the correct class name', () => {
-    const { container } = render(<Label>Test Label</Label>);
-    const labelElement = container.querySelector('span');
-    expect(labelElement).toHaveClass('label');
+    const { getByText } = render(<Label>Check Class</Label>);
+    const element = getByText('Check Class');
+    expect(element).toHaveClass('label');
   });
 
-  it('renders without children', () => {
-    const { container } = render(<Label />);
-    const labelElement = container.querySelector('span');
-    expect(labelElement).toBeInTheDocument();
-    expect(labelElement).toBeEmptyDOMElement();
+  it('renders children correctly', () => {
+    const { getByText } = render(<Label>Child Content</Label>);
+    const element = getByText('Child Content');
+    expect(element).toBeInTheDocument();
+  });
+
+  it('falls back to span if an invalid tag is provided', () => { // @ts-expect-error Invalid tag
+    const { getByText } = render(<Label tag="div" as any>Invalid Tag</Label>);
+    const element = getByText('Invalid Tag');
+    expect(element.tagName).toBe('SPAN');
+    expect(element).toHaveAttribute('data-label', 'true');
   });
 });

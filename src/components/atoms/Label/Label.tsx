@@ -31,4 +31,3 @@ export function Label({ children = "", tag = "span" }: LabelProps): JSX.Element 
     className: styles.label,
   }, children);
 }
-
