@@ -1,0 +1,5 @@
+@use '@/sass/_variables.scss' as *;
+
+.header {
+  @include background();
+}

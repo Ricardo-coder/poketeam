@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} ${pokemon.className}`}>
+      <body style={{ margin: 0 }} className={`${roboto.className} ${pokemon.className}`}>
         {children}
       </body>
     </html>

@@ -1,11 +1,9 @@
-import { Logo } from "@/components/molecules";
+import { Header } from "@/components/organism";
 
 export default function Home() {
   return (
     <div>
-      <header>
-        <Logo />
-      </header>
+      <Header />
       <main>
       </main>
       <footer></footer>

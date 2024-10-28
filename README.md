@@ -18,6 +18,10 @@ Abaixo estão os componentes incluídos na pasta `components`:
 - [ImageCard](src/components/molecules/ImageCard/README.md)
 - [Logo](src/components/molecules/Logo/README.md)
 
+### Organisms
+
+- [Header](src/components/molecules/Header/README.md)
+
 ## Como usar
 
 1. Clone o repositório.

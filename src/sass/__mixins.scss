@@ -320,3 +320,8 @@
     background-size: $size;
   }
 }
+
+@mixin container() {
+  max-width: v.$container-max-width;
+  padding: v.$container-padding;
+}
