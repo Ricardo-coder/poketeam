@@ -2,10 +2,10 @@
 
 .logo {
   @include flex();
+  pointer-events: none;
+  user-select: none;
 
   [data-heading] {
-    pointer-events: none;
-
     &:first-child {
       display: block;
       @include fontDisplay('large', $color: $primary-color);
