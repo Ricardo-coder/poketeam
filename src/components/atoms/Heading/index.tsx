@@ -6,12 +6,12 @@
  * @param {'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'} [props.tag='h1'] - The HTML tag to be used for the heading.
  * @returns {JSX.Element} The rendered heading element or a Fragment if no children or invalid tag is provided.
  */
-import { createElement, Fragment } from 'react';
+import { createElement, Fragment, type ReactNode } from 'react';
 import styles from './styles.module.scss';
 
 export interface IHeadingProps {
-  children: React.ReactNode;
-  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  children: ReactNode;
+  tag?: HeadingTag;
 }
 
 export function Heading({ children, tag = 'h1' }: IHeadingProps): JSX.Element {

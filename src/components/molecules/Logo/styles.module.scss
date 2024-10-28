@@ -3,14 +3,18 @@
 .logo {
   @include flex();
 
-  [data-label] {
+  [data-heading] {
+    pointer-events: none;
+
     &:first-child {
+      display: block;
       @include fontDisplay('large', $color: $primary-color);
       @include zIndex(2);
       margin-right: -$spacing-sm;
     }
 
     &:last-child {
+      display: block;
       @include fontDisplay('large', $color: $secondary-color);
       @include zIndex(2);
       margin-left: -$spacing-sm;

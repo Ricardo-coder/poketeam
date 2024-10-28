@@ -14,9 +14,7 @@ import Link from "next/link";
 import { Label } from "@/components/atoms";
 import style from "./styles.module.scss";
 
-interface ImageCardProps {
-  src: string;
-  alt: string;
+interface ImageCardProps extends ImageProps {
   title: string;
   link: string;
 }

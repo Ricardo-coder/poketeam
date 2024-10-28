@@ -37,15 +37,6 @@ export interface IconProps {
   icon?: string;
 }
 
-type Fill = {
-  [key: string]: string;
-}
-
-type Sizes = {
-  width: number | string;
-  height: number | string;
-}
-
 export function Icon({ sizes, fill, icon }: IconProps): JSX.Element | null {
   if (!icon) return null;
 

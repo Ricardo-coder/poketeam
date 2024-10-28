@@ -9,7 +9,7 @@
  * <Logo />
  * ```
  */
-import { Icon, Label } from "@/components/atoms";
+import { Heading, Icon } from "@/components/atoms";
 import { BRAND } from "@/CONSTANTS";
 import styles from "./styles.module.scss";
 
@@ -17,9 +17,9 @@ export function Logo() {
   const [text1, text2] = BRAND.split(" ");
   return (
     <div className={styles.logo}>
-      <Label data-logo-text-1>{text1}</Label>
+      <Heading data-logo-text-1>{text1}</Heading>
       <Icon icon="Pokeball" sizes={{ width: 60, height: 60 }} />
-      <Label>{text2}</Label>
+      <Heading>{text2}</Heading>
     </div>
   );
 }

@@ -12,7 +12,7 @@ import styles from "./styles.module.scss";
 
 interface LabelProps {
   children?: React.ReactNode;
-  tag?: 'span' | 'p';
+  tag?: LabelTag;
 }
 
 export function Label({ children = "", tag = "span" }: LabelProps): JSX.Element {
