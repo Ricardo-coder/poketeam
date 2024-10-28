@@ -19,11 +19,16 @@ interface ImageCardProps extends ImageProps {
   link: string;
 }
 
-export function ImageCard({ src, alt, title, link }: ImageCardProps) {
+export function ImageCard({ src, alt, title, link, sizes }: ImageCardProps): JSX.Element {
   return (
     <Link data-image-card href={link} className={style.imageCard} >
-      <Label>{title}</Label>
-      <Image src={src} alt={alt} fill />
+      <Label data-image-card-label>{title}</Label>
+      <Image
+        data-image-card-background
+        width={sizes?.width as number | `${number}` | undefined}
+        height={sizes?.height as number | `${number}` | undefined}
+        src={src} alt={alt} fill={!sizes} objectFit="fill"
+      />
     </Link >
   );
 }

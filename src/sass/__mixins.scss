@@ -21,8 +21,9 @@
   }
 }
 
-@mixin fontDefault($size: 'medium') {
+@mixin fontDefault($size: 'medium', $color: v.$text-light) {
   font-family: v.$font-default;
+  color: $color;
 
   @if $size =='small' {
     font-size: v.$font-size-sm;
@@ -178,6 +179,8 @@
 }
 
 @mixin border($size: 'thin', $radius: 'standard', $color: 'dark') {
+  border: solid;
+
   @if $size =='thin' {
     border-width: v.$border-width-thin;
   }
@@ -324,4 +327,84 @@
 @mixin container() {
   max-width: v.$container-max-width;
   padding: v.$container-padding;
+}
+
+@mixin grid($columns: 1, $gap: 1rem) {
+  @include container();
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  grid-gap: $gap;
+}
+
+@mixin absoluteCenter($flex: true) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  @if($flex) {
+    @include flex();
+  }
+}
+
+@mixin fullwidth() {
+  width: 100%;
+  height: auto;
+}
+
+@mixin textShadow($color: v.$secondary-color, $size: 'standard') {
+  @if $size =='large' {
+    $size: 3px;
+    $size2: -3px;
+    $size3: 2px;
+    $size4: -2px;
+
+    text-shadow: $size 0 $color,
+      $size2 0 $color,
+      0 $size $color,
+      0 $size2 $color,
+      $size3 $size3 $color,
+      $size4 $size4 $color,
+      $size3 $size4 $color,
+      $size4 $size3 $color;
+  }
+
+  @else if $size =='standard' {
+    $size: 2px;
+    $size2: -2px;
+    $size3: 1px;
+    $size4: -1px;
+
+    text-shadow: $size 0 $color,
+      $size2 0 $color,
+      0 $size $color,
+      0 $size2 $color,
+      $size3 $size3 $color,
+      $size4 $size4 $color,
+      $size3 $size4 $color,
+      $size4 $size3 $color;
+  }
+}
+
+@mixin display-hover($child: null, $display: flex) {
+  &:hover>#{$child} {
+    display: $display;
+
+    @if ($display =='flex') {
+      @include flex();
+    }
+  }
+
+  &>#{$child} {
+    display: none;
+  }
+}
+
+@mixin opacity-hover() {
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }

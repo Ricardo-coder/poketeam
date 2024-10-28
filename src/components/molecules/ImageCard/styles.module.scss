@@ -1,0 +1,20 @@
+.imageCard {
+  position: relative;
+  @include flex();
+  @include background();
+  @include border('thick', 'standard', 'tertiary');
+  @include display-hover([data-label]);
+
+  [data-label] {
+    @include absoluteCenter(false);
+    @include zIndex(2);
+    @include fontDefault('large', $primary-color);
+    @include textShadow();
+  }
+
+  [data-image-card-background] {
+    @include zIndex(1);
+    @include fullwidth();
+    @include opacity-hover();
+  }
+}

@@ -1,2 +1,2 @@
 export { Header } from './Header';
-export { Grid } from './Grid';
+export { GenerationsGrid } from './GenerationsGrid';

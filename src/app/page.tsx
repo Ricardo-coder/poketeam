@@ -1,11 +1,11 @@
-import { Grid, Header } from "@/components/organism";
+import { GenerationsGrid, Header } from "@/components/organism";
 
 export default function Home() {
   return (
     <div>
       <Header />
       <main>
-        <Grid />
+        <GenerationsGrid />
       </main>
       <footer></footer>
     </div>
