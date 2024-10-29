@@ -1,63 +1,55 @@
 # Icon Component
 
-The `Icon` component is a React component that dynamically imports and renders SVG icons. It accepts properties for sizes, fill, and the icon name.
+The `Icon` component is a React component that dynamically imports and renders SVG icons based on the provided props.
 
 ## Props
 
-### `IconProps`
-- **sizes**: An object specifying the width and height of the icon. It can be a number or a string.
-- **fill**: An optional property that can be a string or an object specifying the fill colors for the icon.
-- **icon**: An optional string that specifies the name of the icon to be imported and rendered.
+### `sizes`
+- **Type:** `Sizes`
+- **Description:** Specifies the size of the icon.
 
-### `Fill`
-- A type defining an object where keys are strings and values are strings representing colors.
+### `fill`
+- **Type:** `Fill | string`
+- **Optional**
+- **Description:** Specifies the fill color of the icon. It can be a predefined `Fill` type or any valid CSS color string.
 
-### `Sizes`
-- A type defining an object with `width` and `height` properties, which can be numbers or strings.
+### `icon`
+- **Type:** `string`
+- **Optional**
+- **Description:** The name of the icon to be imported and rendered. If not provided, the component will render an empty fragment.
 
 ## Usage
 
-```tsx
+```jsx
 import { Icon } from './Icon';
 
-const MyComponent = () => (
-  <Icon 
-    sizes={{ width: 24, height: 24 }} 
-    fill="#000" 
-    icon="exampleIcon" 
-  />
-);
+function App() {
+  return (
+    <div>
+      <Icon sizes="large" fill="#000" icon="exampleIcon" />
+    </div>
+  );
+}
 ```
+
+## Notes
+
+- The `Icon` component uses React's `lazy` and `Suspense` for dynamic imports. Ensure that you handle loading states appropriately in your application.
+- The `icon` prop should match the filename of the SVG icon in the `./Icons/` directory.
 
 ## Example
 
-```tsx
-import { lazy } from "react";
+```jsx
+import React, { Suspense } from 'react';
+import { Icon } from './Icon';
 
-export interface IconProps {
-  sizes: Sizes;
-  fill?: Fill | string;
-  icon?: string;
-}
-
-type Fill = {
-  [key: string]: string;
-}
-
-type Sizes = {
-  width: number | string;
-  height: number | string;
-}
-
-export function Icon({ sizes, fill, icon }: IconProps): JSX.Element | null {
-  if (!icon) return null;
-
-  const IconSVG = lazy(() => import(`./Icons/${icon ?? ''}`))
-
-  if (!IconSVG) return null;
-
-  return <IconSVG sizes={sizes} fill={fill} />
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Icon sizes="medium" fill="red" icon="heart" />
+    </Suspense>
+  );
 }
 ```
 
-This component uses React's `lazy` function to dynamically import the SVG icon based on the `icon` prop. If the `icon` prop is not provided or the import fails, the component returns `null`.
+In this example, the `Icon` component will dynamically import and render the `heart` icon with a medium size and red fill color.
