@@ -9,7 +9,7 @@ const roboto = Roboto({
 })
 
 const pokemon = localFont({
-  src: '../fonts/pokemon_solid.ttf',
+  src: '../../public/fonts/pokemon_solid.ttf',
   display: 'swap',
 })
 
