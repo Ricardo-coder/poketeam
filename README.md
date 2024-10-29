@@ -15,11 +15,13 @@ Abaixo estão os componentes incluídos na pasta `components`:
 
 ### Molecules
 
+- [Grid](src/components/molecules/Grid/README.md)
 - [ImageCard](src/components/molecules/ImageCard/README.md)
 - [Logo](src/components/molecules/Logo/README.md)
 
 ### Organisms
 
+- [GenerationsGrid](src/components/molecules/GenerationsGrid/README.md)
 - [Header](src/components/molecules/Header/README.md)
 
 ## Como usar

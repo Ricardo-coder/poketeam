@@ -3,18 +3,19 @@
   @include flex();
   @include background();
   @include border('thick', 'standard', 'tertiary');
-  @include display-hover([data-label]);
+  @include opacityHover($child: [data-image-card-background], $default: 1, $hover: .2);
+  @include displayHover($child: [data-label]);
 
   [data-label] {
     @include absoluteCenter(false);
     @include zIndex(2);
     @include fontDefault('large', $primary-color);
     @include textShadow();
+    @include spacing('small');
   }
 
   [data-image-card-background] {
     @include zIndex(1);
     @include fullwidth();
-    @include opacity-hover();
   }
 }

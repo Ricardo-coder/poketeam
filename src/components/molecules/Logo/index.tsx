@@ -17,9 +17,9 @@ export function Logo() {
   const [text1, text2] = BRAND.split(" ");
   return (
     <div className={styles.logo}>
-      <Heading data-logo-text-1>{text1}</Heading>
-      <Icon icon="Pokeball" sizes={{ width: 60, height: 60 }} />
-      <Heading>{text2}</Heading>
+      <Heading data-logo-text-1 data-testid="logo-text-1">{text1}</Heading>
+      <Icon data-testid="logo-icon" icon="Pokeball" sizes={{ width: 60, height: 60 }} />
+      <Heading data-testid="logo-text-2">{text2}</Heading>
     </div>
   );
 }

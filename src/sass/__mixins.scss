@@ -264,7 +264,7 @@
   }
 }
 
-@mixin breakpoint($size: 'small') {
+@mixin breakpoint($size: 'xlarge') {
   @if $size =='small' {
     @media (min-width: v.$breakpoint-sm) {
       @content;
@@ -332,8 +332,8 @@
 @mixin grid($columns: 1, $gap: 1rem) {
   @include container();
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
   grid-gap: $gap;
+  grid-template-columns: repeat($columns, 1fr);
 }
 
 @mixin absoluteCenter($flex: true) {
@@ -387,24 +387,52 @@
   }
 }
 
-@mixin display-hover($child: null, $display: flex) {
-  &:hover>#{$child} {
-    display: $display;
+@mixin opacityHover($default: 0, $hover: 1, $child: null) {
+  @if $child !=null {
+    &:hover>#{$child} {
+      opacity: $hover;
+    }
 
-    @if ($display =='flex') {
-      @include flex();
+    &>#{$child} {
+      opacity: $default;
     }
   }
 
-  &>#{$child} {
-    display: none;
+  @else {
+    opacity: $default;
+
+    &:hover {
+      opacity: $hover;
+    }
+
   }
 }
 
-@mixin opacity-hover() {
-  opacity: 1;
+@mixin displayHover($default: unset, $hover: flex, $child: null) {
+  @if $child !=null {
+    &:hover>#{$child} {
+      display: $hover;
 
-  &:hover {
-    opacity: 0.5;
+      @if $hover ==flex {
+        @include flex();
+      }
+    }
+
+    &>#{$child} {
+      display: $default;
+
+      @if $default ==flex {
+        @include flex();
+      }
+    }
+  }
+
+  @else {
+    display: $default;
+
+    &:hover {
+      display: $hover;
+    }
+
   }
 }

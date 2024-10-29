@@ -2,8 +2,8 @@
 
 .logo {
   @include flex();
-  pointer-events: none;
-  user-select: none;
+  // pointer-events: none;
+  // user-select: none;
 
   [data-heading] {
     &:first-child {
