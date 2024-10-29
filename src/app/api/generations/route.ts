@@ -1,3 +1,9 @@
+/**
+ * Fetches data from the generations API and returns it as a JSON response.
+ *
+ * @constant {string} dynamic - Indicates the dynamic behavior of the route.
+ * @returns {Promise<Response>} A promise that resolves to a Response object containing the fetched data.
+ */
 import { GENERATIONS_API_URL } from "@/CONSTANTS";
 
 export const dynamic = 'force-static';

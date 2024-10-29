@@ -24,6 +24,12 @@ Abaixo estão os componentes incluídos na pasta `components`:
 - [GenerationsGrid](src/components/molecules/GenerationsGrid/README.md)
 - [Header](src/components/molecules/Header/README.md)
 
+### Templates
+
+### API
+
+- [Pokémon Generations API](src/app/api/generations/README.md)
+
 ## Como usar
 
 1. Clone o repositório.
