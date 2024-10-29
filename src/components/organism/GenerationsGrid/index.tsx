@@ -1,22 +1,39 @@
+
 /**
- * Component that renders a grid of Pokémon generations.
+ * Renders a grid of Pokémon generations using the `Section`, `Grid`, and `ImageCard` components.
+ * Fetches generation data using the `useGenerations` hook and displays each generation as an image card.
  * 
- * This component fetches the generations data using the `useGenerations` hook
- * and displays them in a grid layout. Each generation is represented by an 
- * `ImageCard` component.
+ * @returns {JSX.Element} A section containing a grid of image cards representing Pokémon generations.
  * 
- * @returns {JSX.Element | null} The rendered component or null if data is loading or an error occurred.
+ * @component
+ * @example
+ * return (
+ *   <GenerationsGrid />
+ * )
+ * 
+ * @remarks
+ * - Displays a loading or error state if the data is still being fetched or if there is an error.
+ * - Each generation is represented by an image card with a corresponding image and title.
+ * 
+ * @hook
+ * - `useGenerations`: Custom hook to fetch Pokémon generation data.
+ * 
+ * @dependencies
+ * - `Section`: Atom component to wrap the grid.
+ * - `Grid`: Molecule component to layout the image cards.
+ * - `ImageCard`: Molecule component to display each generation as an image card.
  */
 'use client';
 import { Section } from "@/components/atoms";
 import { Grid, ImageCard } from "@/components/molecules";
 import { useGenerations } from "@/hooks";
+import { Fragment } from "react";
 
-export function GenerationsGrid(): JSX.Element | null {
+export function GenerationsGrid(): JSX.Element {
   const { generations, isLoading, isError } = useGenerations();
 
   if (isError || isLoading) {
-    return null
+    return <Fragment />;
   }
 
   const { results, count } = generations?.data;
