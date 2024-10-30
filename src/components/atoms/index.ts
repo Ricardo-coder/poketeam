@@ -1,4 +1,5 @@
 export { Heading } from './Heading';
-export { Label } from './Label';
 export { Icon } from './Icon';
+export { Label } from './Label';
+export { Main } from './Main';
 export { Section } from './Section';
