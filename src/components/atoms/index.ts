@@ -1,5 +1,10 @@
-export { Heading } from './Heading';
+// Icons
 export { Icon } from './Icon';
-export { Label } from './Label';
-export { Main } from './Main';
-export { Section } from './Section';
+
+// Typography
+export { Heading } from './typography/Heading';
+export { Label } from './typography/Label';
+
+//Semantics
+export { Main } from './semantics/Main';
+export { Section } from './semantics/Section';

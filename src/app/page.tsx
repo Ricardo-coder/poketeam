@@ -1,13 +1,15 @@
+import { Main } from "@/components/atoms";
 import { GenerationsGrid, Header } from "@/components/organism";
+import { Fragment } from "react";
 
 export default function Home() {
   return (
-    <div>
+    <Fragment>
       <Header />
-      <main>
+      <Main>
         <GenerationsGrid />
-      </main>
+      </Main>
       <footer></footer>
-    </div>
+    </Fragment>
   );
 }
