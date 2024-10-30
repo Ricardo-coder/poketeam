@@ -29,6 +29,7 @@ import { Grid, ImageCard } from "@/components/molecules";
 import { useGenerations } from "@/hooks";
 import { Fragment } from "react";
 import styles from './styles.module.scss';
+import { IMG_GEN_OWNER } from "@/CONSTANTS";
 
 export function GenerationsGrid(): JSX.Element {
   const { generations, isLoading, isError } = useGenerations();
@@ -50,7 +51,7 @@ export function GenerationsGrid(): JSX.Element {
         {results.map(({ name }, index) => {
           const cardProps = {
             src: `/images/generations/${name}.jpg`,
-            alt: name,
+            alt: `Generation ${index + 1} image | Image credits: ${IMG_GEN_OWNER}`,
             title: `GEN ${index + 1}`,
             link: '',
             sizes: {

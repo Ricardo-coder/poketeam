@@ -24,6 +24,7 @@ export function ImageCard({ src, alt, title, link, sizes }: ImageCardProps): JSX
     <Link data-image-card href={link} className={style.imageCard} >
       <Label>{title}</Label>
       <Image
+        data-image-card-background
         width={sizes?.width as number | `${number}` | undefined}
         height={sizes?.height as number | `${number}` | undefined}
         src={src} alt={alt} fill={!sizes}
