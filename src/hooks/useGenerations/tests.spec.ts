@@ -17,7 +17,7 @@ describe('useGenerations', () => {
 
     expect(result.current.generations).toEqual(mockData);
     expect(result.current.isLoading).toBe(false);
-    expect(result.current.isError).toBe(null);
+    expect(result.current.isError).toBeNull();
   });
 
   it('should return an error when the fetch fails', async () => {
@@ -30,7 +30,7 @@ describe('useGenerations', () => {
 
     const { result } = renderHook(() => useGenerations());
 
-    expect(result.current.generations).toBe(null);
+    expect(result.current.generations).toBeNull();
     expect(result.current.isLoading).toBe(false);
     expect(result.current.isError).toBe(mockError);
   });
@@ -44,8 +44,8 @@ describe('useGenerations', () => {
 
     const { result } = renderHook(() => useGenerations());
 
-    expect(result.current.generations).toBe(null);
+    expect(result.current.generations).toBeNull();
     expect(result.current.isLoading).toBe(true);
-    expect(result.current.isError).toBe(null);
+    expect(result.current.isError).toBeNull();
   });
 });

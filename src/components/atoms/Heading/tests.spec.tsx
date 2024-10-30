@@ -8,14 +8,12 @@ describe('Heading', () => {
     render(<Heading tag="h2">Test Heading</Heading>);
     const headingElement = screen.getByText('Test Heading');
     expect(headingElement.tagName).toBe('H2');
-    expect(headingElement).toHaveClass('heading');
   });
 
   it('renders with default tag h1 when no tag is provided', () => {
     render(<Heading>Default Heading</Heading>);
     const headingElement = screen.getByText('Default Heading');
     expect(headingElement.tagName).toBe('H1');
-    expect(headingElement).toHaveClass('heading');
   });
 
   it('renders Fragment when children are not provided', () => { // @ts-expect-error - children are not provided

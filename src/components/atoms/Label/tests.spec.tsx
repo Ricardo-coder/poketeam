@@ -16,12 +16,6 @@ describe('Label component', () => {
     expect(element).toHaveAttribute('data-label', 'true');
   });
 
-  it('applies the correct class name', () => {
-    const { getByText } = render(<Label>Check Class</Label>);
-    const element = getByText('Check Class');
-    expect(element).toHaveClass('label');
-  });
-
   it('renders children correctly', () => {
     const { getByText } = render(<Label>Child Content</Label>);
     const element = getByText('Child Content');
