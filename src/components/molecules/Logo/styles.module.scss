@@ -1,25 +1,26 @@
-@use '@/sass/_mixins.scss' as *;
+@use '@/sass/colors.scss' as color;
+@use '@/sass/grid.scss' as display;
+@use '@/sass/typography.scss' as typo;
+@use '@/sass/styling.scss' as style;
 
 .logo {
-  @include flex();
-  // pointer-events: none;
-  // user-select: none;
+  pointer-events: none;
+  user-select: none;
+  @include display.flex();
 
   [data-heading] {
     &:first-child {
-      display: block;
-      @include fontDisplay('large', $color: $primary-color);
-      @include zIndex(2);
-      margin-right: -$spacing-sm;
-      @include textShadow($secondary-color, 'large');
+      margin-right: -(display.$spacing-md);
+      @include typo.heading($size: '3', $color: color.$primary-color, $font: 'display');
+      @include display.z-index('top');
+      @include style.text-shadow(color.$secondary-color, 'large');
     }
 
     &:last-child {
-      display: block;
-      @include fontDisplay('large', $color: $secondary-color);
-      @include zIndex(2);
-      margin-left: -$spacing-sm;
-      @include textShadow($tertiary-color, 'large');
+      margin-left: -(display.$spacing-md);
+      @include typo.heading($size: '3', $color: color.$secondary-color, $font: 'display');
+      @include display.z-index('top');
+      @include style.text-shadow(color.$tertiary-color, 'large');
     }
   }
 }

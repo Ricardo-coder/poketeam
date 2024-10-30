@@ -7,7 +7,6 @@
  * @returns {JSX.Element} The rendered heading element or a Fragment if no children or invalid tag is provided.
  */
 import { createElement, Fragment, type ReactNode } from 'react';
-import styles from './styles.module.scss';
 
 export interface IHeadingProps {
   children: ReactNode;
@@ -21,6 +20,5 @@ export function Heading({ children, tag = 'h1' }: IHeadingProps): JSX.Element {
 
   return createElement(tag, {
     'data-heading': true,
-    className: styles.heading,
   }, children);
 }

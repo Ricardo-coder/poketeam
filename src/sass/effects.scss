@@ -1,0 +1,57 @@
+@use './grid.scss' as display;
+
+/**
+  * Effects - Mixins
+  * -----------------------------------------------------------------------------
+  * Effects mixins for hover and other effects
+*/
+
+@mixin opacity-hover($default: 0, $hover: 1, $child: null) {
+  @if $child !=null {
+    &:hover>#{$child} {
+      opacity: $hover;
+    }
+
+    &>#{$child} {
+      opacity: $default;
+    }
+  }
+
+  @else {
+    opacity: $default;
+
+    &:hover {
+      opacity: $hover;
+    }
+
+  }
+}
+
+@mixin display-hover($default: unset, $hover: flex, $child: null) {
+  @if $child !=null {
+    &:hover>#{$child} {
+      display: $hover;
+
+      @if $hover ==flex {
+        @include display.flex();
+      }
+    }
+
+    &>#{$child} {
+      display: $default;
+
+      @if $default ==flex {
+        @include display.flex();
+      }
+    }
+  }
+
+  @else {
+    display: $default;
+
+    &:hover {
+      display: $hover;
+    }
+
+  }
+}

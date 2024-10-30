@@ -1,0 +1,121 @@
+@use './colors.scss' as color;
+
+/**
+  * Styling - Variables
+  * -----------------------------------------------------------------------------
+  * Variables for styling the application.
+*/
+
+//BORDER
+$border-width-thin: 1px;
+$border-width-standard: 3px;
+$border-width-thick: 5px;
+
+$border-radius-standard: 0;
+$border-radius-rounded: 1rem;
+$border-radius-circle: 50%;
+// ---
+
+/**
+  * Styling - Mixins
+  * -----------------------------------------------------------------------------
+  * Mixins for styling the application.
+*/
+
+@mixin border($size: 'thin', $radius: 'standard', $color: 'dark') {
+  border: solid;
+
+  @if $size =='thin' {
+    border-width: $border-width-thin;
+  }
+
+  @else if $size =='standard' {
+    border-width: $border-width-standard;
+  }
+
+  @else if $size =='thick' {
+    border-width: $border-width-thick;
+  }
+
+  @if $radius =='standard' {
+    border-radius: $border-radius-standard;
+  }
+
+  @else if $radius =='rounded' {
+    border-radius: $border-radius-rounded;
+  }
+
+  @else if $radius =='circle' {
+    border-radius: $border-radius-circle;
+  }
+
+  @if $color =='primary' {
+    border-color: color.$primary-color;
+  }
+
+  @else if $color =='secondary' {
+    border-color: color.$secondary-color;
+  }
+
+  @else if $color =='tertiary' {
+    border-color: color.$tertiary-color;
+  }
+
+  @else if $color =='dark' {
+    border-color: $text-dark;
+  }
+}
+
+@mixin background($color: 'dark', $image: 'none', $position: 'center', $size: 'cover') {
+  @if $color =='light' {
+    background-color: color.$background-light;
+  }
+
+  @else if $color =='dark' {
+    background-color: color.$dark-color;
+  }
+
+  @else if $color !='dark' && $color !='light' {
+    background-color: $color;
+  }
+
+  @if $image !='none' {
+    background-image: url($image);
+    background-position: $position;
+    background-size: $size;
+  }
+}
+
+@mixin text-shadow($color: color.$secondary-color, $size: 'standard') {
+  @if $size =='large' {
+    $size: 3px;
+    $size2: -3px;
+    $size3: 2px;
+    $size4: -2px;
+
+    text-shadow: $size 0 $color,
+      $size2 0 $color,
+      0 $size $color,
+      0 $size2 $color,
+      $size3 $size3 $color,
+      $size4 $size4 $color,
+      $size3 $size4 $color,
+      $size4 $size3 $color;
+  }
+
+  @else if $size =='standard' {
+    $size: 2px;
+    $size2: -2px;
+    $size3: 1px;
+    $size4: -1px;
+
+    text-shadow: $size 0 $color,
+      $size2 0 $color,
+      0 $size $color,
+      0 $size2 $color,
+      $size3 $size3 $color,
+      $size4 $size4 $color,
+      $size3 $size4 $color,
+      $size4 $size3 $color;
+  }
+}

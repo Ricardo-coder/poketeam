@@ -1,7 +1,7 @@
-@use '@/sass/_mixins.scss' as *;
+@use '@/sass/grid.scss' as grid;
 
 .section {
-  @include flex(column, center, center);
-  @include spacing('medium', 'vertical');
-  width: 100%;
+  @include grid.flex(column, center, center);
+  @include grid.spacing('medium', 'vertical');
+  @include grid.fullwidth();
 }

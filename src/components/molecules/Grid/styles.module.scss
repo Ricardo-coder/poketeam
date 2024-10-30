@@ -1,13 +1,14 @@
-@use '@/sass/_mixins' as *;
+@use '@/sass/grid.scss' as display;
+@use '@/sass/responsiveness.scss' as responsive;
 
 .grid {
-  @include grid(1);
+  @include display.grid(1);
 
-  @include breakpoint('medium') {
-    @include grid(3);
+  @include responsive.breakpoint('tablet') {
+    @include display.grid(3);
   }
 
-  @include breakpoint('xxlarge') {
-    @include grid(4);
+  @include responsive.breakpoint('ultrawide') {
+    @include display.grid(4);
   }
 }

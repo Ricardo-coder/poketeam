@@ -1,0 +1,224 @@
+/**
+ * Grid - Variables
+  * -----------------------------------------------------------------------------
+  * Variables for grid layout and positioning.
+ */
+
+//SPACING
+$spacing-sm: .5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2.5rem;
+$spacing-xxl: 3.5rem;
+// ---
+
+//Z-INDEX
+$z-index-low: 1;
+$z-index-medium: 2;
+$z-index-high: 3;
+$z-index-top: 4;
+// ---
+
+// CONTAINERS
+$container-max-width: 1200px;
+// ---
+
+/**
+ * Grid - Mixins
+  * -----------------------------------------------------------------------------
+  * Mixins for grid layout and positioning.
+ */
+
+@mixin grid($columns: 1, $gap: $spacing-md) {
+  @include container();
+  display: grid;
+  grid-gap: $spacing-md;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $wrap: nowrap, $gap: $spacing-sm) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin absolute-center($flex: true) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+
+  @if($flex) {
+    @include flex();
+  }
+}
+
+@mixin container() {
+  @include flex();
+  width: 100%;
+  max-width: $container-max-width;
+}
+
+@mixin fullwidth() {
+  width: 100%;
+  height: auto;
+}
+
+@mixin spacing($size: 'medium', $direction: 'all') {
+  @if $direction =='all' {
+    @if $size =='small' {
+      padding: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='top' {
+    @if $size =='small' {
+      padding-top: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-top: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-top: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-top: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='right' {
+    @if $size =='small' {
+      padding-right: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-right: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-right: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-right: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='bottom' {
+    @if $size =='small' {
+      padding-bottom: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-bottom: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-bottom: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-bottom: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='left' {
+    @if $size =='small' {
+      padding-left: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-left: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-left: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-left: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='horizontal' {
+    @if $size =='small' {
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-left: $spacing-md;
+      padding-right: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-left: $spacing-lg;
+      padding-right: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-left: $spacing-xl;
+      padding-right: $spacing-xl;
+    }
+  }
+
+  @else if $direction =='vertical' {
+    @if $size =='small' {
+      padding-top: $spacing-sm;
+      padding-bottom: $spacing-sm;
+    }
+
+    @else if $size =='medium' {
+      padding-top: $spacing-md;
+      padding-bottom: $spacing-md;
+    }
+
+    @else if $size =='large' {
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+    }
+
+    @else if $size =='xlarge' {
+      padding-top: $spacing-xl;
+      padding-bottom: $spacing-xl;
+    }
+  }
+}
+
+@mixin z-index($level: 'low') {
+  @if $level =='low' {
+    z-index: $z-index-low;
+  }
+
+  @else if $level =='medium' {
+    z-index: $z-index-medium;
+  }
+
+  @else if $level =='high' {
+    z-index: $z-index-high;
+  }
+
+  @else if $level =='top' {
+    z-index: $z-index-top;
+  }
+}

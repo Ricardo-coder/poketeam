@@ -1,21 +1,28 @@
+@use '@/sass/grid.scss' as display;
+@use '@/sass/styling.scss' as style;
+@use '@/sass/typography.scss' as typo;
+@use '@/sass/effects.scss' as effect;
+@use '@/sass/colors.scss' as color;
+
+
 .imageCard {
   position: relative;
-  @include flex();
-  @include background();
-  @include border('thick', 'standard', 'tertiary');
-  @include opacityHover($child: [data-image-card-background], $default: 1, $hover: .2);
-  @include displayHover($child: [data-label]);
+  @include display.flex();
+  @include style.background();
+  @include style.border('thick', 'standard', 'tertiary');
+  @include effect.opacity-hover($child: [data-image-card-background], $default: 1, $hover: .2);
+  @include effect.display-hover($child: [data-label]);
 
   [data-label] {
-    @include absoluteCenter(false);
-    @include zIndex(2);
-    @include fontDefault('large', $primary-color);
-    @include textShadow();
-    @include spacing('small');
+    @include display.absolute-center(false);
+    @include display.z-index('medium');
+    @include typo.heading('3', color.$primary-color);
+    @include style.text-shadow();
+    @include display.spacing('small');
   }
 
   [data-image-card-background] {
-    @include zIndex(1);
-    @include fullwidth();
+    @include display.z-index('low');
+    @include display.fullwidth();
   }
 }

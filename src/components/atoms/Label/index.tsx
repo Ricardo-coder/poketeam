@@ -8,7 +8,6 @@
  * @returns {JSX.Element} The rendered Label component.
  */
 import { createElement } from "react";
-import styles from "./styles.module.scss";
 
 interface LabelProps {
   children?: React.ReactNode;
@@ -21,13 +20,11 @@ export function Label({ children = "", tag = "span" }: LabelProps): JSX.Element 
     tag !== 'p' as LabelProps['tag']
   ) {
     return createElement('span', {
-      'data-label': true,
-      className: styles.label,
+      'data-label': true
     }, children);
   }
 
   return createElement(tag, {
-    'data-label': true,
-    className: styles.label,
+    'data-label': true
   }, children);
 }
