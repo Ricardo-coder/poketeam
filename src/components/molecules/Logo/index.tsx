@@ -1,25 +1,22 @@
 /**
- * The `Logo` component displays the brand logo consisting of two text labels and an icon.
- * It splits the brand name into two parts and displays them with an icon in between.
+ * Logo component that displays the brand name split into two parts with an icon in between.
  *
- * @returns {JSX.Element} The rendered logo component.
+ * This component uses the `Figure`, `Heading`, and `Icon` components from the atoms directory.
+ * It also imports brand constants from the constants file and styles from a local stylesheet.
  *
- * @example
- * ```tsx
- * <Logo />
- * ```
+ * @returns {JSX.Element} The rendered Logo component.
  */
-import { Heading, Icon } from "@/components/atoms";
+import { Figure, Heading, Icon } from "@/components/atoms";
 import { BRAND } from "@/CONSTANTS";
 import styles from "./styles.module.scss";
 
 export function Logo() {
   const [text1, text2] = BRAND.split(" ");
   return (
-    <div className={styles.logo}>
-      <Heading data-logo-text-1 data-testid="logo-text-1">{text1}</Heading>
-      <Icon data-testid="logo-icon" icon="Pokeball" sizes={{ width: 60, height: 60 }} />
-      <Heading data-testid="logo-text-2">{text2}</Heading>
-    </div>
+    <Figure className={styles.logo}>
+      <Heading>{text1}</Heading>
+      <Icon icon="Pokeball" sizes={{ width: 60, height: 60 }} />
+      <Heading>{text2}</Heading>
+    </Figure>
   );
 }

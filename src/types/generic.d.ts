@@ -16,3 +16,8 @@ type ImageProps = {
   fill?: boolean;
   sizes?: Sizes;
 }
+
+interface Fabric {
+  children?: React.ReactNode;
+  className?: string;
+}

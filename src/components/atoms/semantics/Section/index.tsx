@@ -1,21 +1,15 @@
 /**
- * Section component that wraps its children in a styled `<section>` element.
+ * A functional component that renders a semantic HTML `<section>` element.
  *
- * @param {SectionProps} props - The properties for the Section component.
- * @param {React.ReactNode} props.children - The content to be displayed within the section.
- * @returns {JSX.Element} A styled section element containing the provided children.
+ * @param {Object} props - The properties object.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the section.
+ * @param {string} props.className - The CSS class name to apply to the section.
+ * @returns {React.ReactElement} The rendered section element.
  */
 import { createElement } from 'react';
-import styles from './styles.module.scss';
 
-interface SectionProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-export function Section({ children, className = styles.section }: SectionProps) {
+export function Section({ children, className }: Fabric) {
   return createElement('section', {
-    'data-section': true,
     className: className,
   }, children);
 }

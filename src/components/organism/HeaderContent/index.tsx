@@ -4,16 +4,16 @@
  *
  * @returns {JSX.Element} The rendered header component.
  */
-import { Section } from "@/components/atoms";
+import { Header, Section } from "@/components/atoms";
 import { Logo } from "@/components/molecules";
 import styles from './styles.module.scss';
 
-export function Header() {
+export function HeaderContent() {
   return (
-    <header data-header className={styles.header}>
+    <Header className={styles.header}>
       <Section>
         <Logo />
       </Section>
-    </header>
+    </Header>
   );
 }

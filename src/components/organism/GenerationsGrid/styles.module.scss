@@ -1,0 +1,5 @@
+@use '@/sass/generics.scss' as *;
+
+.generations {
+  @include generic-grid();
+}

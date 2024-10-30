@@ -1,39 +1,10 @@
 # Logo Component
 
-The `Logo` component is a part of the `poketeam` project. It is composed of an icon and two labels derived from the `BRAND` constant.
-
-## Import Statements
-
-```javascript
-import { Icon, Label } from "@/components/atoms";
-import { BRAND } from "@/CONSTANTS";
-import styles from "./styles.module.scss";
-```
-
-## Component Definition
-
-```javascript
-export function Logo() {
-  const [text1, text2] = BRAND.split(" ");
-  return (
-    <div className={styles.logo}>
-      <Label data-logo-text-1>{text1}</Label>
-      <Icon icon="Pokeball" sizes={{ width: 60, height: 60 }} />
-      <Label>{text2}</Label>
-    </div>
-  );
-}
-```
-
-## Props
-
-The `Logo` component does not accept any props.
+This component displays the brand logo using the `Figure`, `Heading`, and `Icon` components from the atoms library.
 
 ## Usage
 
-To use the `Logo` component, simply import it and include it in your JSX:
-
-```javascript
+```jsx
 import { Logo } from "@/components/molecules/Logo";
 
 function App() {
@@ -45,31 +16,39 @@ function App() {
 }
 ```
 
+## Props
+
+This component does not accept any props.
+
+## Implementation
+
+```jsx
+import { Figure, Heading, Icon } from "@/components/atoms";
+import { BRAND } from "@/CONSTANTS";
+import styles from "./styles.module.scss";
+
+export function Logo() {
+  const [text1, text2] = BRAND.split(" ");
+  return (
+    <Figure className={styles.logo}>
+      <Heading>{text1}</Heading>
+      <Icon icon="Pokeball" sizes={{ width: 60, height: 60 }} />
+      <Heading>{text2}</Heading>
+    </Figure>
+  );
+}
+```
+
 ## Styling
 
-The component uses styles from `styles.module.scss`. Ensure that the styles are defined appropriately to match the design requirements.
+The component uses styles from `styles.module.scss` to apply custom styling.
+
+## Constants
+
+- `BRAND`: A string constant imported from `@/CONSTANTS` which is split into two parts to form the brand name.
 
 ## Dependencies
 
-- `Icon` and `Label` components from `@/components/atoms`
+- `Figure`, `Heading`, `Icon` components from `@/components/atoms`
 - `BRAND` constant from `@/CONSTANTS`
-- SCSS module for styling
-
-## Example
-
-```javascript
-import React from 'react';
-import { Logo } from "@/components/molecules/Logo";
-
-function Example() {
-  return (
-    <div>
-      <Logo />
-    </div>
-  );
-}
-
-export default Example;
-```
-
-This example demonstrates how to include the `Logo` component in a React application.
+- `styles.module.scss` for styling

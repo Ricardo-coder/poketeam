@@ -1,7 +1,9 @@
 @use '@/sass/grid.scss' as grid;
+@use '@/sass/styling.scss' as style;
 
-.section {
+@mixin generic-grid {
   @include grid.flex(column, center, center);
   @include grid.spacing('medium', 'vertical');
   @include grid.fullwidth();
+  @include style.background();
 }

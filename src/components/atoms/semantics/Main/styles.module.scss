@@ -1,7 +1,0 @@
-@use '@/sass/grid.scss' as grid;
-
-.main {
-  @include grid.flex(column, center, center);
-  @include grid.spacing('medium', 'vertical');
-  @include grid.fullwidth();
-}

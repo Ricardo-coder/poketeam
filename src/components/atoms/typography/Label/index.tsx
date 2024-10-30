@@ -2,15 +2,15 @@
  * Label component that renders a specified HTML tag with optional children.
  *
  * @param {LabelProps} props - The properties for the Label component.
- * @param {React.ReactNode} [props.children] - The content to be rendered inside the Label component.
+ * @param {ReactNode} [props.children] - The content to be rendered inside the Label component.
  * @param {'span' | 'p'} [props.tag='span'] - The HTML tag to be used for the Label component.
  * 
  * @returns {JSX.Element} The rendered Label component.
  */
-import { createElement } from "react";
+import { createElement, type ReactNode } from "react";
 
 interface LabelProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   tag?: LabelTag;
 }
 

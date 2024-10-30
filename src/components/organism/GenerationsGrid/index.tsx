@@ -28,6 +28,7 @@ import { Section } from "@/components/atoms";
 import { Grid, ImageCard } from "@/components/molecules";
 import { useGenerations } from "@/hooks";
 import { Fragment } from "react";
+import styles from './styles.module.scss';
 
 export function GenerationsGrid(): JSX.Element {
   const { generations, isLoading, isError } = useGenerations();
@@ -44,7 +45,7 @@ export function GenerationsGrid(): JSX.Element {
   }
 
   return (
-    <Section>
+    <Section className={styles.generations}>
       <Grid {...gridProps}>
         {results.map(({ name }, index) => {
           const cardProps = {

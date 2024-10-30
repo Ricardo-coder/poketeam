@@ -1,47 +1,55 @@
 # Section Component
 
-The `Section` component is a simple wrapper component that applies specific styles to a section of your application.
+This component is a simple wrapper around the HTML `<section>` element, created using React's `createElement` function.
 
 ## Usage
 
 ```jsx
 import { Section } from './Section';
 
-<Section>
-  <p>Your content here</p>
-</Section>
+function App() {
+  return (
+    <Section className="my-section">
+      <h1>Hello, World!</h1>
+      <p>This is a section component.</p>
+    </Section>
+  );
+}
 ```
 
 ## Props
 
-### `children` (optional)
-
-- **Type**: `React.ReactNode`
-- **Description**: The content to be displayed within the section.
-
-## Styles
-
-The component uses styles from `styles.module.css`. Ensure you have the following styles defined:
-
-```css
-/* styles.module.css */
-.section {
-  /* Your styles here */
-}
-```
+- **children**: `React.ReactNode` - The content to be rendered inside the section.
+- **className**: `string` - Optional CSS class to apply to the section.
 
 ## Example
 
 ```jsx
 import { Section } from './Section';
-import styles from './styles.module.css';
 
-export function App() {
+export function Example() {
   return (
-    <Section>
-      <h1 className={styles.title}>Welcome to the Section</h1>
-      <p className={styles.content}>This is a section component.</p>
+    <Section className="example-section">
+      <h2>Example Section</h2>
+      <p>This is an example of the Section component in use.</p>
     </Section>
   );
+}
+```
+
+## Code
+
+```typescript
+import { createElement } from 'react';
+
+interface SectionProps {
+  children?: React.ReactNode;
+  className?: string;
+}
+
+export function Section({ children, className }: SectionProps) {
+  return createElement('section', {
+    className: className,
+  }, children);
 }
 ```
